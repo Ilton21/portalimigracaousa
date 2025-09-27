@@ -1,0 +1,11 @@
+## 🚀 Como rodar o projeto localmente
+
+Siga os passos abaixo para instalar e executar o portal na sua máquina:
+
+### 1️⃣ Pré-requisitos
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+
+### 2️⃣ Clonar o repositório
+```bash
+git clone https://github.com/Ilton21/portal-imigracaousa.git
