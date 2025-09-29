@@ -2,17 +2,16 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-6 mt-12">
-      <div className="container mx-auto flex justify-between items-center 
-px-6">
-        <p>&copy; {new Date().getFullYear()} Portal Imigração USA</p>
+    <footer className="bg-gray-800 text-white py-6">
+      <div className="max-w-6xl mx-auto px-6 flex justify-between 
+items-center">
+        <p className="text-sm">&copy; {new Date().getFullYear()} Portal 
+Imigração USA</p>
         <nav className="space-x-4">
-          <Link href="/" className="hover:text-white">
-            Início
-          </Link>
-          <Link href="/about" className="hover:text-white">
-            Sobre
-          </Link>
+          <Link href="/" className="hover:text-gray-400">Início</Link>
+          <Link href="/about" className="hover:text-gray-400">Sobre</Link>
+          <Link href="/contact" 
+className="hover:text-gray-400">Contato</Link>
         </nav>
       </div>
     </footer>
