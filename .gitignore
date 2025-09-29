@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Ignorar arquivos e pastas do macOS
+.DS_Store
+.Trash/
+Library/
+Downloads/
+Movies/
+Music/
+Pictures/
+Public/
+Documents/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
