@@ -55,4 +55,63 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# -------------------------
+# macOS
+# -------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+.Trashes
+Icon?
+._*
+.Spotlight-V100
+.fseventsd
+Library/
+Desktop DB
+Network Trash Folder
+
+# -------------------------
+# Node.js / npm / yarn
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# -------------------------
+# Next.js build
+# -------------------------
+.next/
+out/
+build/
+dist/
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+logs
+*.pid
+*.seed
+*.pid.lock
+
+# -------------------------
+# Editor / IDE
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# Sistema / Outros
+# -------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
