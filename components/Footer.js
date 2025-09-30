@@ -1,4 +1,6 @@
-import SocialLinks from './SocialLinks';
+import Link from "next/link";
+
+<Link href="/">Home</Link>
 
 export default function Footer() {
   return (
