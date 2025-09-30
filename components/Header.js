@@ -1,21 +1,18 @@
-import Link from "next/link";
+import Link from 'next/link';
+import SocialLinks from './SocialLinks';
 
 export default function Header() {
   return (
-    <header className="bg-blue-600 text-white py-4">
-      <div className="max-w-6xl mx-auto px-6 flex justify-between 
-items-center">
+    <header className="bg-gray-900 text-white p-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <h1 className="text-xl font-bold">Portal Imigração USA</h1>
-        <nav className="space-x-4">
-          <Link href="/" className="hover:text-blue-200 
-transition">Início</Link>
-          <Link href="/about" className="hover:text-blue-200 
-transition">Sobre</Link>
-          <Link href="/contact" className="hover:text-blue-200 
-transition">Contato</Link>
+        <nav className="mt-2 md:mt-0 space-x-4">
+          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/about" className="hover:underline">Sobre</Link>
+          <Link href="/contact" className="hover:underline">Contato</Link>
         </nav>
       </div>
+      <SocialLinks />
     </header>
   );
 }
-

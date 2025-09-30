@@ -1,20 +1,12 @@
-import Link from "next/link";
+import SocialLinks from './SocialLinks';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-6">
-      <div className="max-w-6xl mx-auto px-6 flex justify-between 
-items-center">
-        <p className="text-sm">&copy; {new Date().getFullYear()} Portal 
-Imigração USA</p>
-        <nav className="space-x-4">
-          <Link href="/" className="hover:text-gray-400">Início</Link>
-          <Link href="/about" className="hover:text-gray-400">Sobre</Link>
-          <Link href="/contact" 
-className="hover:text-gray-400">Contato</Link>
-        </nav>
+    <footer className="bg-gray-900 text-white p-4 mt-8">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+        <p className="text-sm">&copy; {new Date().getFullYear()} Portal Imigração USA. Todos os direitos reservados.</p>
+        <SocialLinks />
       </div>
     </footer>
   );
 }
-

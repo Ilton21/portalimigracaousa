@@ -114,4 +114,7 @@ logs
 .env.development.local
 .env.test.local
 .env.production.local
+# Arquivos temporários/backup do editor
+*.save
+*.bak
 
