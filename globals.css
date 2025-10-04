@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  transition: transform 0.2s, color 0.2s;
+}
+
+a:hover {
+  transform: scale(1.2);
+  color: #1d4ed8; /* azul mais escuro */
+}
+
