@@ -2,8 +2,8 @@ import './globals.css'
 
 export const metadata = {
   title: 'Portal Imigração USA',
-  description: 'Informação prática sobre direitos e deveres de imigrantes 
-nos EUA - conteúdo educativo.',
+  ddescription: 'Informação prática sobre direitos e deveres de 
+
 }
 
 export default function RootLayout({ children }) {
