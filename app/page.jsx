@@ -8,12 +8,12 @@ import { motion } from 'framer-motion'
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-b from-blue-400 via-indigo-500 
-to-purple-600 text-white min-h-screen flex flex-col">
+    <main className="flex flex-col min-h-screen">
 
-      {/* Seção Hero com animação */}
-      <section className="text-center py-20 px-4">
-        <motion.h1 
+      {/* Seção Hero com gradiente */}
+      <section className="text-center py-20 px-4 bg-gradient-to-tr 
+from-blue-400 via-indigo-500 to-purple-600 text-white">
+        <motion.h1
           className="text-5xl md:text-6xl font-extrabold drop-shadow-lg 
 mb-6 text-yellow-300"
           initial={{ y: -50, opacity: 0 }}
@@ -22,15 +22,13 @@ mb-6 text-yellow-300"
         >
           Portal Imigração Legal pro EUA
         </motion.h1>
-        
         <motion.p
-          className="text-lg md:text-xl max-w-2xl mx-auto mb-10 
-text-white"
+          className="text-lg md:text-xl max-w-2xl mx-auto mb-10"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Informação prática sobre direitos e deveres de imigrantes nos EUA — conteúdo educativo.
+          Sonhar em viver na América é fácil, conquistar isso com informaçào é o primeiro passo. Direitos e deveres de imigrantes legal nos EUA — conteúdo educativo sem acessória jurídica.
         </motion.p>
 
         <motion.div
@@ -51,7 +49,6 @@ transition">
           </Link>
         </motion.div>
 
-        {/* Ícones de redes sociais */}
         <motion.div
           className="flex justify-center gap-6 text-2xl"
           initial={{ y: 20, opacity: 0 }}
@@ -71,12 +68,11 @@ transition"><SiTiktok /></a>
         </motion.div>
       </section>
 
-      {/* Seção de Cards com animações */}
-      <section className="py-16 px-4 bg-white text-gray-800">
+      {/* Seção de Destaques com fundo claro */}
+      <section className="py-16 px-4 bg-gray-50 text-gray-800">
         <h2 className="text-3xl font-bold text-center mb-12">Destaques do 
 Portal</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          
           {[
             { title: 'Dica de Imigração', color: 'blue', text: 'Aprenda os principais direitos e deveres de imigrantes nos EUA de forma prática.' },
             { title: 'E-books Gratuitos', color: 'pink', text: 'Baixe e-books com informações importantes sobre processos legais e vistos nos EUA.' },
@@ -84,7 +80,8 @@ Portal</h2>
           ].map((card, index) => (
             <motion.div
               key={index}
-              className={`bg-${card.color}-100 rounded-xl p-6 shadow-lg`}
+              className={`bg-${card.color}-100 rounded-xl p-6 shadow-lg 
+hover:scale-105 transform transition`}
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -95,11 +92,21 @@ text-${card.color}-800`}>{card.title}</h3>
               <p className="text-gray-700">{card.text}</p>
             </motion.div>
           ))}
-
         </div>
       </section>
 
-      {/* Rodapé */}
+      {/* Seção adicional com cor suave */}
+      <section className="py-16 px-4 bg-blue-50 text-gray-900">
+        <h2 className="text-3xl font-bold text-center mb-12">Por que usar 
+nosso portal?</h2>
+        <p className="max-w-3xl mx-auto text-center text-lg md:text-xl">
+          Nosso portal oferece informações confiáveis e práticas, 
+atualizadas e apresentadas de forma clara, para ajudar imigrantes a 
+navegar pelas leis e direitos nos EUA com segurança e facilidade.
+        </p>
+      </section>
+
+      {/* Rodapé com gradiente */}
       <footer className="bg-gradient-to-r from-purple-600 via-indigo-500 
 to-blue-400 text-white py-8 mt-auto">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row 
