@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
 
-      {/* Seção Hero com gradiente */}
-      <section className="text-center py-20 px-4 bg-gradient-to-tr 
-from-blue-400 via-indigo-500 to-purple-600 text-white">
+      {/* Seção Hero com gradiente sofisticado */}
+      <section className="text-center py-24 px-4 bg-gradient-to-tr 
+from-blue-500 via-indigo-500 to-pink-500 text-white">
         <motion.h1
           className="text-5xl md:text-6xl font-extrabold drop-shadow-lg 
 mb-6 text-yellow-300"
@@ -23,16 +23,16 @@ mb-6 text-yellow-300"
           Portal Imigração Legal pro EUA
         </motion.h1>
         <motion.p
-          className="text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl max-w-2xl mx-auto mb-12"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Sonhar em viver na América é fácil, conquistar isso com informaçào é o primeiro passo. Direitos e deveres de imigrantes legal nos EUA — conteúdo educativo sem acessória jurídica.
+          Sonhar em viver na América é fácil - conquistar isso com informação é o primeiro passa - conteúdo educativo sem acessória jurídica.
         </motion.p>
 
         <motion.div
-          className="flex flex-col md:flex-row justify-center gap-6 mb-12"
+          className="flex flex-col md:flex-row justify-center gap-6 mb-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
@@ -69,7 +69,7 @@ transition"><SiTiktok /></a>
       </section>
 
       {/* Seção de Destaques com fundo claro */}
-      <section className="py-16 px-4 bg-gray-50 text-gray-800">
+      <section className="py-20 px-4 bg-gray-50 text-gray-800">
         <h2 className="text-3xl font-bold text-center mb-12">Destaques do 
 Portal</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
@@ -81,7 +81,7 @@ Portal</h2>
             <motion.div
               key={index}
               className={`bg-${card.color}-100 rounded-xl p-6 shadow-lg 
-hover:scale-105 transform transition`}
+hover:shadow-2xl hover:scale-105 transform transition`}
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -96,14 +96,27 @@ text-${card.color}-800`}>{card.title}</h3>
       </section>
 
       {/* Seção adicional com cor suave */}
-      <section className="py-16 px-4 bg-blue-50 text-gray-900">
-        <h2 className="text-3xl font-bold text-center mb-12">Por que usar 
+      <section className="py-20 px-4 bg-indigo-50 text-gray-900">
+        <h2 className="text-3xl font-bold text-center mb-8">Por que usar 
 nosso portal?</h2>
         <p className="max-w-3xl mx-auto text-center text-lg md:text-xl">
           Nosso portal oferece informações confiáveis e práticas, 
 atualizadas e apresentadas de forma clara, para ajudar imigrantes a 
 navegar pelas leis e direitos nos EUA com segurança e facilidade.
         </p>
+      </section>
+
+      {/* Seção de Chamada final */}
+      <section className="py-20 px-4 bg-purple-100 text-gray-900 
+text-center">
+        <h2 className="text-3xl font-bold mb-6">Comece agora</h2>
+        <p className="mb-8 max-w-2xl mx-auto">Explore dicas, artigos e 
+e-books para se informar e garantir seus direitos nos EUA.</p>
+        <Link href="/articles" className="bg-yellow-400 text-blue-900 
+font-semibold py-3 px-8 rounded-xl shadow-lg hover:bg-yellow-300 
+hover:scale-105 transition transform">
+          Ver Dicas
+        </Link>
       </section>
 
       {/* Rodapé com gradiente */}
@@ -127,6 +140,7 @@ transition"><FaYoutube /></a>
           </div>
         </div>
       </footer>
+
     </main>
   )
 }

@@ -1,9 +1,27 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --blue-primary: #1E88E5;
+  --blue-600: #2563EB;
+  --bg-soft: #E3F2FD;
+  --text-main: #1E293B;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Fonte opcional */
+html, body, #__next {
+  height: 100%;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, 
+"Helvetica Neue", Arial;
+  color: var(--text-main);
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
