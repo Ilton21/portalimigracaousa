@@ -1,103 +1,113 @@
 "use client";
-import { Globe2, Users, Headphones, Mail } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { Heart, Globe2, Users, MessageSquare } from "lucide-react";
 
-export default function Home() {
-  const recursos = [
-    {
-      icon: <Globe2 className="w-12 h-12 text-blue-600 mb-4" />,
-      title: "Documentação e Vistos",
-      desc: "Guias e informações atualizadas sobre processos migratórios e documentação.",
-      color: "from-blue-50 to-blue-100",
-    },
-    {
-      icon: <Users className="w-12 h-12 text-green-600 mb-4" />,
-      title: "Comunidades Locais",
-      desc: "Descubra redes de apoio e associações próximas a você.",
-      color: "from-green-50 to-green-100",
-    },
-    {
-      icon: <Headphones className="w-12 h-12 text-purple-600 mb-4" />,
-      title: "Atendimento e Orientação",
-      desc: "Conecte-se com especialistas e voluntários para suporte prático.",
-      color: "from-purple-50 to-purple-100",
-    },
-  ];
-
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
-      {/* Cabeçalho Hero */}
-      <header className="text-center py-24">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl font-bold text-blue-700 mb-4"
-        >
-          Portal Imigração USA
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-lg md:text-xl max-w-3xl mx-auto text-gray-700"
-        >
-          Informações, orientações e apoio para quem deseja iniciar ou continuar sua jornada nos Estados Unidos.
-        </motion.p>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800">
+      {/* HEADER */}
+      <header className="flex justify-between items-center px-6 py-4 bg-white shadow-sm sticky top-0 z-50">
+        <h1 className="text-2xl font-bold text-blue-700">Portal Imigração USA</h1>
+        <nav className="space-x-6 hidden md:flex">
+          <a href="#sobre" className="hover:text-blue-600 transition">Sobre</a>
+          <a href="#recursos" className="hover:text-blue-600 transition">Recursos</a>
+          <a href="#contato" className="hover:text-blue-600 transition">Contato</a>
+        </nav>
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white">Entrar</Button>
       </header>
 
-      {/* Seção de Cartões */}
-      <section className="py-20 px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Recursos Essenciais
-        </h2>
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {recursos.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className={`rounded-2xl bg-gradient-to-br ${item.color} p-8 text-center shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300`}
+      {/* HERO */}
+      <section className="text-center px-6 py-20 bg-blue-100">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-extrabold text-blue-700 mb-4"
+        >
+          Apoio e Informação para Imigrantes nos EUA
+        </motion.h2>
+        <p className="max-w-2xl mx-auto text-gray-600 mb-8">
+          Conectamos pessoas, recursos e oportunidades para quem busca uma nova vida nos Estados Unidos.
+        </p>
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg">
+          Comece Aqui
+        </Button>
+      </section>
+
+      {/* SEÇÃO SOBRE */}
+      <section id="sobre" className="px-6 py-16 max-w-5xl mx-auto">
+        <h3 className="text-3xl font-semibold text-blue-700 mb-6 text-center">Sobre o Portal</h3>
+        <p className="text-gray-700 text-center max-w-3xl mx-auto">
+          O Portal Imigração USA nasceu para oferecer informações confiáveis, orientação e suporte
+          a imigrantes e suas famílias. Nosso objetivo é facilitar o acesso a direitos, serviços e
+          oportunidades, promovendo integração e dignidade.
+        </p>
+      </section>
+
+      {/* SEÇÃO DE RECURSOS */}
+      <section id="recursos" className="px-6 py-16 bg-blue-50">
+        <h3 className="text-3xl font-semibold text-blue-700 mb-10 text-center">Recursos e Apoio</h3>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            {
+              icon: <Globe2 className="w-10 h-10 text-blue-600 mb-3" />,
+              title: "Documentação e Vistos",
+              desc: "Guias e informações atualizadas sobre processos migratórios e documentação, sem acessória jurídica.",
+            },
+            {
+              icon: <Users className="w-10 h-10 text-blue-600 mb-3" />,
+              title: "Comunidades Locais",
+              desc: "Descubra redes de apoio e associações próximas a você.",
+            },
+            {
+              icon: <MessageSquare className="w-10 h-10 text-blue-600 mb-3" />,
+              title: "Atendimento e Orientação",
+              desc: "Conecte-se com especialistas e voluntários prontos para ajudar.",
+            },
+          ].map((item, i) => (
+            <Card
+              key={i}
+              className="rounded-2xl shadow-md hover:shadow-lg transition bg-white"
             >
-              {item.icon}
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-gray-700 mb-6">{item.desc}</p>
-              <a
-                href="https://wa.me/5511999999999"
-                target="_blank"
-                className="inline-block px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-              >
-                Fale no WhatsApp
-              </a>
-            </motion.div>
+              <CardContent className="p-6 text-center">
+                {item.icon}
+                <h4 className="text-xl font-bold text-blue-700 mb-2">{item.title}</h4>
+                <p className="text-gray-600">{item.desc}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
 
-      {/* Rodapé */}
-      <footer className="bg-gray-900 text-gray-300 py-10 mt-16">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="mb-4">
-            © {new Date().getFullYear()} Portal Imigração USA — Todos os direitos reservados.
+      {/* CHAMADA FINAL */}
+      <section className="text-center py-16 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-2xl mx-auto"
+        >
+          <Heart className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          <h3 className="text-3xl font-semibold text-blue-700 mb-4">
+            Juntos por uma nova vida
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Cada jornada é única. Nosso compromisso é oferecer informações, empatia e acolhimento a todos.
           </p>
-          <div className="flex justify-center gap-6">
-            <a href="https://facebook.com" target="_blank" className="hover:text-blue-400 transition">
-              <Globe2 className="w-6 h-6" />
-            </a>
-            <a href="https://instagram.com" target="_blank" className="hover:text-pink-500 transition">
-              <Users className="w-6 h-6" />
-            </a>
-            <a href="https://linkedin.com" target="_blank" className="hover:text-blue-500 transition">
-              <Headphones className="w-6 h-6" />
-            </a>
-            <a href="mailto:contato@portalimigracaousa.com" className="hover:text-green-400 transition">
-              <Mail className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg">
+            Fale Conosco
+          </Button>
+        </motion.div>
+      </section>
+
+      {/* RODAPÉ */}
+      <footer className="bg-blue-700 text-white text-center py-6 mt-12">
+        <p>© {new Date().getFullYear()} Portal Imigração USA — Todos os direitos reservados.</p>
       </footer>
-    </main>
+    </div>
   );
 }
 
