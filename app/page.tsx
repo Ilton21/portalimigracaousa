@@ -3,12 +3,12 @@
 import { useState } from 'react';
 
 const categories = [
-  { icon: '✈', title: 'Vistos e entrada', desc: 'Conheça categorias de visto e os caminhos para estudar, visitar ou trabalhar.', href: 'https://travel.state.gov/content/travel/en/us-visas.html', label: 'Departamento de Estado' },
-  { icon: '▣', title: 'Green Card', desc: 'Entenda as principais categorias de residência permanente.', href: 'https://www.uscis.gov/green-card', label: 'USCIS' },
-  { icon: '★', title: 'Cidadania', desc: 'Informações oficiais sobre naturalização e elegibilidade.', href: 'https://www.uscis.gov/citizenship', label: 'USCIS' },
-  { icon: '✓', title: 'Trabalho e EAD', desc: 'Saiba onde consultar autorização de emprego e documentação.', href: 'https://www.uscis.gov/working-in-the-united-states', label: 'USCIS' },
-  { icon: '⌂', title: 'Vida nos EUA', desc: 'Serviços públicos, adaptação e recursos para o dia a dia.', href: 'https://www.usa.gov/immigration-and-citizenship', label: 'USA.gov' },
-  { icon: '◎', title: 'Direitos e apoio', desc: 'Encontre informações e organizações de assistência jurídica.', href: 'https://www.justice.gov/eoir/list-pro-bono-legal-service-providers', label: 'Departamento de Justiça' }
+  { icon: '✈', title: 'Vistos e entrada', desc: 'Conheça categorias de visto e os caminhos para estudar, visitar ou trabalhar.', href: '/guias/vistos', label: 'Departamento de Estado' },
+  { icon: '▣', title: 'Green Card', desc: 'Entenda as principais categorias de residência permanente.', href: '/guias/green-card', label: 'USCIS' },
+  { icon: '★', title: 'Cidadania', desc: 'Informações oficiais sobre naturalização e elegibilidade.', href: '/guias/cidadania', label: 'USCIS' },
+  { icon: '✓', title: 'Trabalho e EAD', desc: 'Saiba onde consultar autorização de emprego e documentação.', href: '/guias/trabalho', label: 'USCIS' },
+  { icon: '⌂', title: 'Vida nos EUA', desc: 'Serviços públicos, adaptação e recursos para o dia a dia.', href: '/guias/vida-nos-eua', label: 'USA.gov' },
+  { icon: '◎', title: 'Direitos e apoio', desc: 'Encontre informações e organizações de assistência jurídica.', href: '/guias/direitos', label: 'Departamento de Justiça' }
 ];
 
 const faqs = [
@@ -59,7 +59,7 @@ export default function Home() {
 
         <section className="section categories-section" id="assuntos"><div className="container">
           <div className="section-head"><div><span className="section-kicker">EXPLORE POR ASSUNTO</span><h2>Encontre o que você <span>precisa saber.</span></h2><p>Um ponto de partida para explorar temas importantes da sua jornada.</p></div><label className="search-box"><span aria-hidden="true">⌕</span><input type="search" placeholder="Buscar assunto..." value={search} onChange={e => setSearch(e.target.value)} aria-label="Buscar assuntos" /></label></div>
-          <div className="category-grid">{filtered.map((item,index) => <a key={item.title} className="category-card" href={item.href} target="_blank" rel="noopener noreferrer"><span className={'category-icon tone-' + index % 3}>{item.icon}</span><h3>{item.title}</h3><p>{item.desc}</p><span className="category-footer">{item.label} <span>↗</span></span></a>)}</div>
+          <div className="category-grid">{filtered.map((item,index) => <a key={item.title} className="category-card" href={item.href}><span className={'category-icon tone-' + index % 3}>{item.icon}</span><h3>{item.title}</h3><p>{item.desc}</p><span className="category-footer">Ler guia em português <span>↗</span></span></a>)}</div>
           {filtered.length === 0 && <p className="empty-state">Nenhum assunto encontrado. Experimente outra palavra.</p>}
         </div></section>
 
