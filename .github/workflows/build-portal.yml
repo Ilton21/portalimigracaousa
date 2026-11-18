@@ -19,5 +19,7 @@ jobs:
           node-version: '22'
       - name: Instalar dependências
         run: npm install --no-audit --no-fund
+      - name: Verificar lint
+        run: npm run lint
       - name: Compilar Next.js e verificar tipos
         run: npm run build
