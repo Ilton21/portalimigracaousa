@@ -1,0 +1,23 @@
+name: Testar compilação do portal
+on:
+  push:
+    branches:
+      - redesign-home-2026
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependências
+        run: npm install --no-audit --no-fund
+      - name: Compilar Next.js e verificar tipos
+        run: npm run build

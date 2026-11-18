@@ -1,0 +1,21 @@
+name: Validar notícias
+on:
+  pull_request:
+    paths:
+      - 'lib/news.ts'
+      - 'scripts/check-news.cjs'
+      - 'package.json'
+      - '.github/workflows/validar-noticias.yml'
+  workflow_dispatch:
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Conferir estrutura editorial
+        run: npm run check:news

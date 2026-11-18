@@ -1,0 +1,54 @@
+name: "Sugestão de notícia para revisão"
+description: "Registrar uma pauta sem publicar automaticamente"
+title: "[Pauta] "
+labels: ["editorial"]
+body:
+  - type: markdown
+    attributes:
+      value: "Nenhuma notícia enviada por este formulário será publicada automaticamente. Não inclua dados pessoais."
+  - type: input
+    id: source-url
+    attributes:
+      label: "URL direta do comunicado oficial"
+      placeholder: "https://www.uscis.gov/..."
+    validations:
+      required: true
+  - type: input
+    id: agency
+    attributes:
+      label: "Órgão emissor"
+    validations:
+      required: true
+  - type: input
+    id: published
+    attributes:
+      label: "Data da publicação original (AAAA-MM-DD)"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Categoria
+      options:
+        - Vistos
+        - Green Card
+        - Cidadania
+        - Trabalho
+        - Direitos
+        - Vida nos EUA
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Resumo proposto em português"
+      description: "Indique também se o texto descreve uma regra vigente, proposta ou programa piloto."
+    validations:
+      required: true
+  - type: checkboxes
+    id: editorial
+    attributes:
+      label: Revisão
+      options:
+        - label: "A fonte e a data foram conferidas por uma pessoa."
+          required: false
