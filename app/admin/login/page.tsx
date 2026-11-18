@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
@@ -12,7 +13,7 @@ export default async function AdminLogin() {
     if (isAuthorizedAdmin(session)) redirect('/admin');
   }
   return <main className="admin-login"><section className="admin-login-card">
-    <a href="/" className="admin-back">← Voltar ao portal</a>
+    <Link href="/" className="admin-back">← Voltar ao portal</Link>
     <div className="admin-logo">PI<span>.</span></div>
     <span className="section-kicker">ÁREA RESTRITA</span>
     <h1>Painel administrativo</h1>
