@@ -17,12 +17,12 @@ export const authOptions: NextAuthOptions = {
   session: { strategy: 'jwt', maxAge: 60 * 60 * 8 },
   pages: { signIn: '/admin/login', error: '/admin/login' },
   callbacks: {
-    async signIn({ account, profile }) {
-      return Boolean(adminConfigured && account?.provider === 'github' && profile && String(profile.id) === allowedId);
+    async signIn({ account }) {
+      return Boolean(adminConfigured && account?.provider === 'github' && account.providerAccountId === allowedId);
     },
-    async jwt({ token, account, profile }) {
-      if (account?.provider === 'github' && profile) {
-        token.adminId = String(profile.id);
+    async jwt({ token, account }) {
+      if (adminConfigured && account?.provider === 'github' && account.providerAccountId === allowedId) {
+        token.adminId = account.providerAccountId;
       }
       return token;
     },
