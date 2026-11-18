@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
@@ -15,7 +16,7 @@ export default async function AdminPage() {
   if (!isAuthorizedAdmin(session)) redirect('/admin/login');
 
   return <main className="admin-panel">
-    <header className="admin-header"><div className="container admin-header-inner"><a href="/" className="admin-wordmark">Portal Imigração <span>USA</span></a><AdminSignOutButton /></div></header>
+    <header className="admin-header"><div className="container admin-header-inner"><Link href="/" className="admin-wordmark">Portal Imigração <span>USA</span></Link><AdminSignOutButton /></div></header>
     <div className="container admin-content">
       <span className="section-kicker">ÁREA ADMINISTRATIVA PRIVADA</span>
       <h1>Visão geral do portal</h1>
