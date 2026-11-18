@@ -1,4 +1,4 @@
-import type { NextAuthOptions } from 'next-auth';
+import type { NextAuthOptions, Session } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 
 const clientId = process.env.GITHUB_OAUTH_CLIENT_ID;
@@ -35,6 +35,7 @@ export const authOptions: NextAuthOptions = {
   }
 };
 
-export function isAuthorizedAdmin(session: { user?: { adminId?: string } } | null): boolean {
-  return Boolean(adminConfigured && allowedId && session?.user?.adminId === allowedId);
+export function isAuthorizedAdmin(session: Session | null): boolean {
+  const adminUser = session?.user as (Session['user'] & { adminId?: string }) | undefined;
+  return Boolean(adminConfigured && allowedId && adminUser?.adminId === allowedId);
 }
