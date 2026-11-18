@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
-import { authOptions, isAuthorizedAdmin } from '../../lib/admin-auth';
+import { adminConfigured, authOptions, isAuthorizedAdmin } from '../../lib/admin-auth';
 import { news } from '../../lib/news';
 import { guides } from '../../lib/guides';
 import AdminSignOutButton from '../../components/AdminSignOutButton';
@@ -10,6 +10,7 @@ export const metadata: Metadata = { title: 'Painel administrativo | Portal Imigr
 export const dynamic = 'force-dynamic';
 
 export default async function AdminPage() {
+  if (!adminConfigured) redirect('/admin/login');
   const session = await getServerSession(authOptions);
   if (!isAuthorizedAdmin(session)) redirect('/admin/login');
 
