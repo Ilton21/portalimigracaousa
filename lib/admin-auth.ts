@@ -1,8 +1,8 @@
 import type { NextAuthOptions, Session } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 
-const clientId = process.env.GITHUB_OAUTH_CLIENT_ID;
-const clientSecret = process.env.GITHUB_OAUTH_CLIENT_SECRET;
+const clientId = process.env.GITHUB_ID;
+const clientSecret = process.env.GITHUB_SECRET;
 const allowedId = process.env.GITHUB_ADMIN_ID;
 const secret = process.env.NEXTAUTH_SECRET;
 
